@@ -91,7 +91,8 @@
         Title: <input type="text" name="title">
         Author: <input type="text" name="author">
         Pages: <input type="text" name="pages">
-        Have you read it? <input type="text" name="beenRead">
+        Have you read it? <input type="radio" name="beenRead" value="Yes"> Yes
+        				  <input type="radio" name="beenRead" value="No"> No
         <input type="submit" name="add" value="Add">
     </form>
 
