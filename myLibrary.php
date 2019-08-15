@@ -54,7 +54,7 @@
         <div class="container">
             <div class="navbar-header">
                 <a href="#" class="visible-md visible-lg">
-                    <!--<img id="logo-img" src="img/Logo.png" alt="Logo">-->
+                    <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
                 </a>
             </div> <!-- end of navbar-header -->
 
@@ -104,7 +104,7 @@
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
-                <th> Been read </th>
+                <th> Read it </th>
                 <th> Edit </th>
                 <th> Delete </th>
             </tr>

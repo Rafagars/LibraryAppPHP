@@ -4,7 +4,7 @@
 }
 
 body{
-	background-color: lightcyan;
+	background-color: #eeefc7;
 	color: black;
 }
 
@@ -14,7 +14,7 @@ body{
 
 
 #header-nav{
-	background-color: #122b40;
+	background-color: #b29764;
 }
 .navbar-brand{
 	margin-top: -25px;
@@ -30,7 +30,7 @@ body{
 }
 
 .panel-footer{
-	background-color: #122b40;
+	background-color: #b29764;
 	color: white;
 	width: 100%;
 
@@ -38,7 +38,7 @@ body{
 
 .login{
 	width: 400px;
-	background-color: #ffffff;
+	background-color: #ededcf;
 	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 	margin: 100px auto;
 	margin-top: 15%;
@@ -47,7 +47,7 @@ body{
 .login h1{
 	text-align: center;
 	color: #ffffff;
-	background-color: #122b40;
+	background-color: #b29764;
 	font-size: 24px;
 	padding: 20px 0 20px 0;
 	border-bottom: 1px solid #dee0e4;
@@ -81,30 +81,16 @@ body{
 	transition: background-color 0.2s;
 }
 
-
-.login form .btn-success{
-	background-color: #122b40;
-}
-
-.login form .btn-danger{
-	/*background-color: #31708f; */
-	background-color: #122b40;
-}
-.login form .btn-success:hover, .login form .btn-danger:hover {
-	background-color: #31708f;
-	transition: background-color 0.2s;
-}
-
 .register {
 	width: 400px;
-	background-color: #ffffff;
+	background-color: #ededcf;
 	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
 	margin: 100px auto;
 }
 .register h1 {
 	text-align: center;
 	color: #ffffff;
-	background-color: #122b40;
+	background-color: #b29764;
 	font-size: 24px;
 	padding: 20px 0 20px 0;
 	border-bottom: 1px solid #dee0e4;
@@ -141,16 +127,12 @@ body{
 	transition: background-color 0.2s;
 }
 
-.register form .btn-success{
-	background-color: #122b40;
+.register form .btn-success, .login form .btn-success, .login form .btn-danger, .register form .btn-danger{
+	background-color: #b29764;
 }
 
-.register form .btn-danger{
-	/*background-color: #31708f; */
-	background-color: #122b40;
-}
-.register form .btn-success:hover, .register form .btn-danger:hover {
-	background-color: #31708f;
+.register form .btn-success:hover, .register form .btn-danger:hover, .login form .btn-success:hover, .login form .btn-danger:hover  {
+	background-color: #cca779;
 	transition: background-color 0.2s;
 }
 
@@ -171,6 +153,10 @@ a {
 
 .dropdown > button, .dropdown-menu {
 
-    background-color: #122b40;
+    background-color: #b29764;
     color: white;
-} 
+}
+
+#edit-message, #delete-message {
+	margin-top: 5%;
+}

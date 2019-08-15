@@ -31,13 +31,45 @@
 
  ?>
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Edit book</title>
- </head>
- <body>
- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Library Edit</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#" class="visible-md visible-lg">
+                    <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
+                </a>
+            </div> <!-- end of navbar-header -->
+
+            <div class="navbar-brand">
+                <a href="#"><h1> LibraryApp </h1></a>
+            </div>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
+            <div id="collapsable-nav" class="collapse navbar-collapse">
+                <ul id="nav-list" class="nav navbar-nav navbar-right">
+                    <li><a id="login" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
+                </ul>
+            </div> <!-- end of collapsable nav -->
+        </div> <!-- end of container -->
+    </nav>
+</header>
+
+<div id="edit-message" class="container text-center">
  		<?php echo '<h4 style="color: red;">' . $error . "</h4>"; ?>
 
 		<form method="post">
@@ -48,6 +80,6 @@
 			<input type="submit" name="edit" value="Edit">
 			<input type="submit" name="cancel" value="cancel">
 		</form>
-
+</div>
  </body>
  </html>

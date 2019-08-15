@@ -101,7 +101,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         <div class="container">
             <div class="navbar-header">
                 <a href="index.php" class="pull-left visible-md visible-lg">
-                    <img id="logo-img" src="img/Logo.png" alt="Logo">
+                    <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
                 </a>
             </div>
 

@@ -25,7 +25,7 @@
         <div class="container">
             <div class="navbar-header">
                 <a href="#" class="visible-md visible-lg">
-                    <!--<img id="logo-img" src="img/Logo.png">-->
+                    <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
                 </a>
             </div> <!-- end of navbar-header -->
 
@@ -51,7 +51,7 @@
 </header>
 
 <div  class="container body-content">
-    <img id="welcome-img" class="center-block" src="https://www.firstmesquiteumc.org/wp-content/uploads/2016/10/welcome.png" width="100%">
+    <img id="welcome-img" class="center-block" src="https://catatanpustakawan30.files.wordpress.com/2013/07/perpus14.jpg" width="80%">
 </div>
 
 
