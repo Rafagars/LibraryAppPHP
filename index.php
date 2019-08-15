@@ -51,11 +51,13 @@
 </header>
 
 <div  class="container body-content">
-    <img id="welcome-img" class="center-block" src="https://catatanpustakawan30.files.wordpress.com/2013/07/perpus14.jpg" width="80%">
+    <div class="inside_content">
+        <img id="welcome-img" class="center-block" src="https://catatanpustakawan30.files.wordpress.com/2013/07/perpus14.jpg" width="80%">
+    </div>
 </div>
 
 
-<footer class="panel-footer navbar navbar-default navbar-fixed-bottom">
+<footer class="panel-footer">
     <div class="container">
         <div class="row">
             <p> Rafael Garcia &copy; 2019 </p>

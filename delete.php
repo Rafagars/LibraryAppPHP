@@ -19,6 +19,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Library delete</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -47,21 +48,31 @@
 
             <div id="collapsable-nav" class="collapse navbar-collapse">
                 <ul id="nav-list" class="nav navbar-nav navbar-right">
-                    <li><a id="login" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
+                    <li><a id="logout" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
                 </ul>
             </div> <!-- end of collapsable nav -->
         </div> <!-- end of container -->
     </nav>
 </header>
 
-<div class="container text-center">
-<p id="delete-message">
-	<form method="post">
-		<h3>Are you sure that you what to delete this entry? </h3>
-		<input type="submit" name="yes" value="Yes">
-		<input type="submit" name="no" value="No">
-	</form>
-</p>
+<div class="container text-center body-content">
+    <div>
+        <p id="delete-message">
+        <form method="post">
+            <h3>Are you sure that you what to delete this entry? </h3>
+            <input type="submit" name="yes" value="Yes">
+            <input type="submit" name="no" value="No">
+        </form>
+        </p>
+    </div>
 </div>
+
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <p> Rafael Garcia &copy; 2019 </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

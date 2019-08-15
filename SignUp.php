@@ -113,51 +113,53 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     </nav>
 </header>
 
+<div class="body-content">
+    <div class="inside_content">
+        <div class="register">
+            <h1> Sign Up </h1>
 
-<div class="register body-content">
-    <h1> Sign Up </h1>
+            <?php
+            if ( isset($_SESSION['error']) ){
+                echo('<p style="color: red;" class="text-center">' . htmlentities($_SESSION['error']) . "</p>\n");
+                unset($_SESSION['error']);
+            }
 
-    <?php
-    if ( isset($_SESSION['error']) ){
-        echo('<p style="color: red;" class="text-center">' . htmlentities($_SESSION['error']) . "</p>\n");
-        unset($_SESSION['error']);
-    }
+            if (isset($_SESSION['success'])){
+                //Useless message but I decided to keep it, just in case.
+                echo ('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
+                unset($_SESSION['success']);
+            }
+            ?>
 
-    if (isset($_SESSION['success'])){
-        //Useless message but I decided to keep it, just in case.
-        echo ('<p style="color: green;">'.htmlentities($_SESSION['success'])."</p>\n");
-        unset($_SESSION['success']);
-    }
-    ?>
+            <form method="post">
 
-    <form method="post">
+                <label for="email">
+                    <i class="fas fa-envelope"></i>
+                </label>
+                <input type="text" name="email" placeholder="Email">
 
-        <label for="email">
-            <i class="fas fa-envelope"></i>
-        </label>
-        <input type="text" name="email" placeholder="Email">
+                <label for="username">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input type="text" name="username" placeholder="Username">
 
-        <label for="username">
-            <i class="fas fa-user"></i>
-        </label>
-        <input type="text" name="username" placeholder="Username">
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <input type="password" name="password" placeholder="Password">
 
-        <label for="password">
-            <i class="fas fa-lock"></i>
-        </label>
-        <input type="password" name="password" placeholder="Password">
+                <label for="copassword">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <input type="password" name="copassword" placeholder="Confirm Password">
 
-        <label for="copassword">
-            <i class="fas fa-lock"></i>
-        </label>
-        <input type="password" name="copassword" placeholder="Confirm Password">
-
-        <input type="submit" value="Sign Up" class="btn-success">
-        <input type="submit" value="Cancel" name="cancel" class="btn-danger">
-    </form>
+                <input type="submit" value="Sign Up" class="btn-success">
+                <input type="submit" value="Cancel" name="cancel" class="btn-danger">
+            </form>
+        </div>
+    </div>
 </div>
-
-<footer class="panel-footer navbar navbar-default navbar-fixed-bottom">
+<footer class="panel-footer">
     <div class="container">
         <div class="row">
             <p> Rafael Garcia &copy; 2019 </p>

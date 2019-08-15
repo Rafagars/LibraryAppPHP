@@ -34,6 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Library Edit</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -62,24 +63,35 @@
 
             <div id="collapsable-nav" class="collapse navbar-collapse">
                 <ul id="nav-list" class="nav navbar-nav navbar-right">
-                    <li><a id="login" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
+                    <li><a id="logout" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
                 </ul>
             </div> <!-- end of collapsable nav -->
         </div> <!-- end of container -->
     </nav>
 </header>
 
-<div id="edit-message" class="container text-center">
+<div id="edit-message" class="container-fluid text-center body-content">
+    <div class="inside_content">
  		<?php echo '<h4 style="color: red;">' . $error . "</h4>"; ?>
 
 		<form method="post">
 			Title: <input type="text" name="title">
 			Author: <input type="text" name="author">
 			Pages: <input type="text" name="pages">
-			Have you read it? <input type="text" name="beenRead">
+            Have you read it? <input type="radio" name="beenRead" value="Yes"> Yes
+            <input type="radio" name="beenRead" value="No"> No
 			<input type="submit" name="edit" value="Edit">
 			<input type="submit" name="cancel" value="cancel">
 		</form>
+    </div>
 </div>
+
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <p> Rafael Garcia &copy; 2019 </p>
+        </div>
+    </div>
+</footer>
  </body>
  </html>

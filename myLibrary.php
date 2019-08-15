@@ -5,6 +5,21 @@
 
     $error = "";
 
+    if (!isset($_SESSION['username'])){
+        //If the user has already login then will be redirect to his Library
+        header("Location: index.php");
+        return;
+    }
+
+    if (isset($_POST['search-bar'])){
+        if (strlen($_POST['search-bar']) < 1){
+            header("Location: myLibrary.php");
+            return;
+        } else {
+            header("Location: search.php?search=".htmlentities($_POST['search-bar'])."&user_id=".htmlentities($_SESSION['user_id']));
+            return;
+        }
+    }
 
     if(isset($_POST['title']) && isset($_POST['author']) && isset($_POST['pages']) && isset($_POST['beenRead'])){
 
@@ -43,6 +58,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Library</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -51,7 +67,7 @@
 
 <header>
     <nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <a href="#" class="visible-md visible-lg">
                     <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
@@ -68,17 +84,18 @@
                 <span class="icon-bar"></span>
             </button>
 
-
             <div id="collapsable-nav" class="collapse navbar-collapse">
                 <ul id="nav-list" class="nav navbar-nav navbar-right">
-                    <li><a id="login" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
+                    <li id="search" class="pull-right"><form method="post"><input type="text" name="search-bar"> <input type="submit" name="search" value="Search"></form></li>
+                    <li class="pull-right"><a id="logout" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
                 </ul>
             </div> <!-- end of collapsable nav -->
         </div> <!-- end of container -->
     </nav>
 </header>
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center body-content">
+    <div class="inside_content">
 
     <?php
     echo '<h1 class="userLibrary">'. htmlentities($_SESSION['username']) . " Library</h1>";
@@ -90,7 +107,7 @@
     <form method="post">
         Title: <input type="text" name="title">
         Author: <input type="text" name="author">
-        Pages: <input type="text" name="pages">
+        <span id="pages">Pages: </span><input type="text" name="pages">
         Have you read it? <input type="radio" name="beenRead" value="Yes"> Yes
         				  <input type="radio" name="beenRead" value="No"> No
         <input type="submit" name="add" value="Add">
@@ -122,6 +139,7 @@
             ?>
         </table>
     </div>
+</div>
 <!--
     <div id="otherLibraries">
         <ul>
@@ -136,8 +154,15 @@
     </div> -->
 </div>
 
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/popper.min.js"></script>
+<footer class="panel-footer">
+    <div class="container">
+        <div class="row">
+            <p> Rafael Garcia &copy; 2019 </p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </body>

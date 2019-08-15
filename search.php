@@ -1,40 +1,32 @@
 <?php
-    require_once 'pdo.php';
+    require_once "pdo.php";
 
     session_start();
 
-    $stmt = $pdo->prepare('SELECT * FROM Books WHERE user_id = :user_id');
+    $stmt = $pdo->prepare("SELECT * FROM Books WHERE (title LIKE '%".htmlentities($_GET['search'])."%' OR author LIKE '%".htmlentities($_GET['search'])."%') AND user_id = :user_id");
 
     $stmt->execute(array(
-        'user_id' => $_GET['user_id']
+        ':user_id' => $_GET['user_id']
     ));
 
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $stmt = $pdo->prepare("SELECT username FROM users WHERE user_id = :user_id");
-
-    $stmt->execute(array(
-        'user_id' => $_GET['user_id']
-    ));
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LibraryApp</title>
+    <title>Search</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
-    <header>
+<header>
     <nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <a href="#" class="visible-md visible-lg">
-                    <!--<img id="logo-img" src="img/Logo.png" alt="Logo">-->
+                    <img id="logo-img" src="https://image.flaticon.com/icons/png/512/562/562132.png">
                 </a>
             </div> <!-- end of navbar-header -->
 
@@ -59,31 +51,31 @@
     </nav>
 </header>
 
-<div class="container text-center body-content">
+<div class="container-fluid text-center body-content">
     <div class="inside_content">
-    <?php
-        echo '<h1 class="userLibrary">'. htmlentities($user['username']) . " Library</h1>";
-    ?>
+        <?php
+        echo '<h1 class="userLibrary"> Search:'. " ". htmlentities($_GET['search']) . "</h1>";
+        ?>
 
-    <div id="booksDiv">
-        <table id="booksTable" class="table">
-            <tr class="categories">
-                <th>Title</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th> Been read </th>
-            </tr>
-            <?php
-            foreach($rows as $row){
-                echo('<tr class="categories">');
-                echo('<th>' . htmlentities($row['title']) . "</th>" );
-                echo('<th>' . htmlentities($row['author']) . '</th>');
-                echo('<th>' . htmlentities($row['pages']) . '</th>');
-                echo('<th>' . htmlentities($row['beenRead']) . '</th>');
-                echo("</tr>");
-            }
-            ?>
-        </table>
+        <div id="booksDiv">
+            <table id="booksTable" class="table">
+                <tr class="categories">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th> Been read </th>
+                </tr>
+                <?php
+                foreach($rows as $row){
+                    echo('<tr class="categories">');
+                    echo('<th>' . htmlentities($row['title']) . "</th>" );
+                    echo('<th>' . htmlentities($row['author']) . '</th>');
+                    echo('<th>' . htmlentities($row['pages']) . '</th>');
+                    echo('<th>' . htmlentities($row['beenRead']) . '</th>');
+                    echo("</tr>");
+                }
+                ?>
+            </table>
         </div>
     </div>
 </div>
@@ -95,7 +87,8 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

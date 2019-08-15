@@ -89,33 +89,35 @@ if (isset($_POST['email']) && isset($_POST['password'])){
 </header>
 
 <div class="container body-content">
-    <div class="login">
-        <h1> Login </h1>
-        <?php
-        if (isset($_SESSION['error'])){
-            //Error message if the user makes a mistake
-            echo('<p style="color: red;" class="text-center">' . htmlentities($_SESSION['error']) . "</p>\n");
-            unset($_SESSION['error']);
-        }
-        ?>
-        <form  method="post">
-            <label for="email">
-                <i class="fas fa-user"></i>
-            </label>
-            <input type="text" name="email" placeholder="Email">
+    <div class="inside_content">
+        <div class="login">
+            <h1> Login </h1>
+            <?php
+            if (isset($_SESSION['error'])){
+                //Error message if the user makes a mistake
+                echo('<p style="color: red;" class="text-center">' . htmlentities($_SESSION['error']) . "</p>\n");
+                unset($_SESSION['error']);
+            }
+            ?>
+            <form  method="post">
+                <label for="email">
+                    <i class="fas fa-user"></i>
+                </label>
+                <input type="text" name="email" placeholder="Email">
 
-            <label for="password">
-                <i class="fas fa-lock"></i>
-            </label>
-            <input type="password" name="password" placeholder="Password">
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                </label>
+                <input type="password" name="password" placeholder="Password">
 
-            <input type="submit" value="Login" class="btn-success">
-            <input type="submit" name="cancel" value="Cancel" class="btn-danger">
-        </form>
+                <input type="submit" value="Login" class="btn-success">
+                <input type="submit" name="cancel" value="Cancel" class="btn-danger">
+            </form>
+        </div>
     </div>
 </div>
 
-<footer class="panel-footer navbar navbar-fixed-bottom">
+<footer class="panel-footer">
     <div class="container">
         <div class="row">
             <p> Rafael Garcia &copy; 2019 </p>
