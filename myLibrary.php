@@ -33,6 +33,12 @@
     ));
 
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $stmt = $pdo->prepare('SELECT user_id, username FROM users');
+
+    $stmt->execute();
+
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,6 +85,8 @@
     echo '<h4 style="color: red;">' . $error . "</h4>";
     ?>
 
+
+
     <form method="post">
         Title: <input type="text" name="title">
         Author: <input type="text" name="author">
@@ -113,6 +121,23 @@
             ?>
         </table>
     </div>
+<!--
+    <div id="otherLibraries">
+        <ul>
+            <?php
+            /*
+                foreach($users as $user){
+                    echo ('<li><a class="libaries" href="library.php?user_id='.$user['user_id']. '">
+                    <span>'. $user['username']. " Library</span></a></li>");
+                }*/
+            ?>
+        </ul>
+    </div> -->
 </div>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </body>
 </html>

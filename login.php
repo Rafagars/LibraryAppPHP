@@ -35,6 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])){
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
         //If the password the user introduce is the same that the one
         //on the database the browser redirect the user to chat.php
         //if not an error message will show up saying that the password
@@ -42,8 +43,7 @@ if (isset($_POST['email']) && isset($_POST['password'])){
 
         if(password_verify($_POST['password'], $row['pass'])){
             $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['name'] = $row['username'];
-
+            $_SESSION['username'] = $row['username'];
 
             header("Location: myLibrary.php");
             return;
