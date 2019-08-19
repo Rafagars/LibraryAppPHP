@@ -165,7 +165,11 @@ a {
 	text-decoration: none;
 }
 
-.dropdown > button, .dropdown-menu {
+.dropdown{
+	margin-top: 10px;
+}
+
+.dropdown > button, .dropdown-menu, .dropdown-item {
 
     background-color: #b29764;
     color: white;

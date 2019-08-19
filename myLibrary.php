@@ -86,6 +86,20 @@
 
             <div id="collapsable-nav" class="collapse navbar-collapse">
                 <ul id="nav-list" class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="otherLibraries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Other Libraries
+                            </button>
+                            <div id="otherLibraries" class="dropdown-menu">
+                                <?php
+                                foreach($users as $user){
+                                    echo ('<a class="libaries dropdown-item" href="library.php?user_id='.$user['user_id']. '">
+                                     <span>'. $user['username']. " Library</span></a>");
+                                }
+                                ?>
+                            </div>
+                    </li>
                     <li id="search" class="pull-right"><form method="post"><input type="text" name="search-bar"> <input type="submit" name="search" value="Search"></form></li>
                     <li class="pull-right"><a id="logout" class="glyphicon glyphicon-log-out" href="logout.php"> Logout </a></li>
                 </ul>
@@ -140,18 +154,7 @@
         </table>
     </div>
 </div>
-<!--
-    <div id="otherLibraries">
-        <ul>
-            <?php
-            /*
-                foreach($users as $user){
-                    echo ('<li><a class="libaries" href="library.php?user_id='.$user['user_id']. '">
-                    <span>'. $user['username']. " Library</span></a></li>");
-                }*/
-            ?>
-        </ul>
-    </div> -->
+
 </div>
 
 <footer class="panel-footer">
