@@ -116,9 +116,11 @@
     echo '<h4 style="color: red;">' . $error . "</h4>";
     ?>
 
+    <button id="addBook"> Add new book </button>
 
+    <br>
 
-    <form method="post">
+    <form id="bookForm" method="post">
         Title: <input type="text" name="title">
         Author: <input type="text" name="author">
         <span id="pages">Pages: </span><input type="text" name="pages">
@@ -167,6 +169,7 @@
 
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
