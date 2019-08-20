@@ -94,7 +94,7 @@
                             <div id="otherLibraries" class="dropdown-menu">
                                 <?php
                                 foreach($users as $user){
-                                    echo ('<a class="libaries dropdown-item" href="library.php?user_id='.$user['user_id']. '">
+                                    echo ('<a class="libraries dropdown-item" href="library.php?user_id='.$user['user_id']. '">
                                      <span>'. $user['username']. " Library</span></a>");
                                 }
                                 ?>

@@ -175,6 +175,12 @@ a {
     color: white;
 }
 
+.dropdown-menu{
+	padding: 5px;
+	border: 2px solid #b18d57;
+	box-sizing: content-box;
+}
+
 #edit-message, #delete-message {
 	margin-top: 5%;
 }
