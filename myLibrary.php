@@ -148,8 +148,8 @@
                 echo('<th>' . htmlentities($row['author']) . '</th>');
                 echo('<th>' . htmlentities($row['pages']) . '</th>');
                 echo('<th>' . htmlentities($row['beenRead']) . '</th>');
-                echo('<th><button class="btn-success"><a href="update.php?id='. $row['id'] .'"> Edit </a></button></th>');
-                echo('<th><button class="btn-danger"><a href="delete.php?id='. $row['id'] .'"> Delete </a></button></th>');
+                echo('<th><button id="edit" class="btn-success"><a href="update.php?id='. $row['id'] .'"> Edit </a></button></th>');
+                echo('<th><button id="delete" class="btn-danger"><a href="delete.php?id='. $row['id'] .'"> Delete </a></button></th>');
                 echo("</tr>");
             }
             ?>

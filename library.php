@@ -18,6 +18,16 @@
     ));
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (isset($_POST['search-bar'])){
+        if (strlen($_POST['search-bar']) < 1){
+            header("Location: myLibrary.php");
+            return;
+        } else {
+            header("Location: search.php?search=".htmlentities($_POST['search-bar'])."&user_id=".htmlentities($_GET['user_id']));
+            return;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
