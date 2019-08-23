@@ -77,7 +77,7 @@
 		<form method="post">
 			Title: <input type="text" name="title">
 			Author: <input type="text" name="author">
-			Pages: <input type="text" name="pages">
+			Pages: <input type="number" name="pages">
             Have you read it? <input type="radio" name="beenRead" value="Yes"> Yes
             <input type="radio" name="beenRead" value="No"> No
 			<input type="submit" name="edit" value="Edit">
