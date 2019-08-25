@@ -71,9 +71,8 @@
 
 <div class="container text-center body-content">
     <div class="inside_content">
-    <?php
-        echo '<h1 class="userLibrary">'. htmlentities($user['username']) . " Library</h1>";
-    ?>
+
+        <h1 class="userLibrary"> <?php echo (htmlentities($user['username']) . " Library"); ?></h1>
 
     <div id="booksDiv">
         <table id="booksTable" class="table">
@@ -83,16 +82,14 @@
                 <th>Pages</th>
                 <th> Been read </th>
             </tr>
-            <?php
-            foreach($rows as $row){
-                echo('<tr class="categories">');
-                echo('<th>' . htmlentities($row['title']) . "</th>" );
-                echo('<th>' . htmlentities($row['author']) . '</th>');
-                echo('<th>' . htmlentities($row['pages']) . '</th>');
-                echo('<th>' . htmlentities($row['beenRead']) . '</th>');
-                echo("</tr>");
-            }
-            ?>
+            <?php foreach($rows as $row): ?>
+                <tr class="categories">
+                    <th> <?php echo htmlentities($row['title']) ; ?></th>
+                    <th> <?php echo htmlentities($row['author']); ?></th>
+                    <th> <?php echo htmlentities($row['pages']) ; ?></th>
+                    <th> <?php echo htmlentities($row['beenRead']); ?></th>
+                </tr>
+            <?php endforeach; ?>
         </table>
         </div>
     </div>

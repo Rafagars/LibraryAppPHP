@@ -92,8 +92,7 @@
                                 Other Libraries
                             </button>
                             <div id="otherLibraries" class="dropdown-menu">
-                                <?php
-                                foreach($users as $user){
+                                <?php foreach($users as $user){
                                     echo ('<a class="libraries dropdown-item" href="library.php?user_id='.$user['user_id']. '">
                                      <span>'. $user['username']. " Library</span></a>");
                                 }
@@ -141,18 +140,16 @@
                 <th> Edit </th>
                 <th> Delete </th>
             </tr>
-            <?php
-            foreach($rows as $row){
-                echo('<tr class="categories">');
-                echo('<th>' . htmlentities($row['title']) . "</th>" );
-                echo('<th>' . htmlentities($row['author']) . '</th>');
-                echo('<th>' . htmlentities($row['pages']) . '</th>');
-                echo('<th>' . htmlentities($row['beenRead']) . '</th>');
-                echo('<th><button id="edit" class="btn-success"><a href="update.php?id='. $row['id'] .'"> Edit </a></button></th>');
-                echo('<th><button id="delete" class="btn-danger"><a href="delete.php?id='. $row['id'] .'"> Delete </a></button></th>');
-                echo("</tr>");
-            }
-            ?>
+            <?php foreach($rows as $row): ?>
+                <tr class="categories">
+                <th> <?php echo htmlentities($row['title']) ; ?></th>
+                <th> <?php echo htmlentities($row['author']); ?></th>
+                <th> <?php echo htmlentities($row['pages']) ; ?></th>
+                <th> <?php echo htmlentities($row['beenRead']); ?></th>
+                <th><button id="edit" class="btn-success"><?php echo('<a href="update.php?id='. $row['id'] .'"> Edit </a>'); ?></button></th>
+                <th><button id="delete" class="btn-danger"><?php echo('<a href="delete.php?id='. $row['id'] .'"> Delete </a>'); ?></button></th>
+                </tr>
+            <?php endforeach; ?>
         </table>
     </div>
 </div>
